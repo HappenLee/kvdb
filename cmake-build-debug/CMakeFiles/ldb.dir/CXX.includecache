@@ -15,11 +15,11 @@ skiplist/skiplist.h
 -
 
 ../include/skiplist/node.h
-vector
+cstring
 -
 memory
 -
-cstring
+vector
 -
 common.h
 ../include/skiplist/common.h
@@ -32,29 +32,41 @@ shared_mutex
 node.h
 ../include/skiplist/node.h
 
-/home/happen/ldb/main.cpp
+/home/happen/mycode/ldb/main.cpp
 string
 -
 iostream
 -
+glog/logging.h
+/home/happen/mycode/ldb/glog/logging.h
 kvdb.h
-/home/happen/ldb/kvdb.h
+/home/happen/mycode/ldb/kvdb.h
 
-/home/happen/ldb/src/kvdb/kvdb.cpp
+/home/happen/mycode/ldb/src/kvdb/kvdb.cpp
 skiplist.h
-/home/happen/ldb/src/kvdb/skiplist.h
+/home/happen/mycode/ldb/src/kvdb/skiplist.h
 kvdb.h
-/home/happen/ldb/src/kvdb/kvdb.h
+/home/happen/mycode/ldb/src/kvdb/kvdb.h
+glog/logging.h
+/home/happen/mycode/ldb/src/kvdb/glog/logging.h
 
-/home/happen/ldb/src/skiplist/skiplist.cpp
-random
+/home/happen/mycode/ldb/src/skiplist/node.cpp
+glog/logging.h
+-
+node.h
+/home/happen/mycode/ldb/src/skiplist/node.h
+
+/home/happen/mycode/ldb/src/skiplist/skiplist.cpp
+fstream
 -
 iostream
 -
-fstream
+random
 -
-skiplist.h
-/home/happen/ldb/src/skiplist/skiplist.h
+glog/logging.h
+-
 common.h
-/home/happen/ldb/src/skiplist/common.h
+/home/happen/mycode/ldb/src/skiplist/common.h
+skiplist.h
+/home/happen/mycode/ldb/src/skiplist/skiplist.h
 

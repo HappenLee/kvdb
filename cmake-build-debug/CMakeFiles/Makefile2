@@ -54,45 +54,192 @@ RM = /usr/share/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/happen/ldb
+CMAKE_SOURCE_DIR = /home/happen/mycode/ldb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/happen/ldb/cmake-build-debug
+CMAKE_BINARY_DIR = /home/happen/mycode/ldb/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/ldb.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/ldb.dir/all:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/depend
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/happen/ldb/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target ldb"
-.PHONY : CMakeFiles/ldb.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
-all: CMakeFiles/ldb.dir/all
+all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ldb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/ldb/cmake-build-debug/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ldb.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/ldb/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/ldb.dir/rule
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-ldb: CMakeFiles/ldb.dir/rule
+main: CMakeFiles/main.dir/rule
 
-.PHONY : ldb
-
-# clean rule for target.
-CMakeFiles/ldb.dir/clean:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/clean
-.PHONY : CMakeFiles/ldb.dir/clean
+.PHONY : main
 
 # clean rule for target.
-clean: CMakeFiles/ldb.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/kvdb.dir
+
+# All Build rule for target.
+CMakeFiles/kvdb.dir/all:
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/depend
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target kvdb"
+.PHONY : CMakeFiles/kvdb.dir/all
+
+# Include target in all.
+all: CMakeFiles/kvdb.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/kvdb.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/kvdb.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/kvdb.dir/rule
+
+# Convenience name for target.
+kvdb: CMakeFiles/kvdb.dir/rule
+
+.PHONY : kvdb
+
+# clean rule for target.
+CMakeFiles/kvdb.dir/clean:
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/clean
+.PHONY : CMakeFiles/kvdb.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/kvdb.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory unittest/kvdb
+
+# Convenience name for "all" pass in the directory.
+unittest/kvdb/all: unittest/kvdb/CMakeFiles/kvdb_test.dir/all
+
+.PHONY : unittest/kvdb/all
+
+# Convenience name for "clean" pass in the directory.
+unittest/kvdb/clean: unittest/kvdb/CMakeFiles/kvdb_test.dir/clean
+
+.PHONY : unittest/kvdb/clean
+
+# Convenience name for "preinstall" pass in the directory.
+unittest/kvdb/preinstall:
+
+.PHONY : unittest/kvdb/preinstall
+
+#=============================================================================
+# Target rules for target unittest/kvdb/CMakeFiles/kvdb_test.dir
+
+# All Build rule for target.
+unittest/kvdb/CMakeFiles/kvdb_test.dir/all:
+	$(MAKE) -f unittest/kvdb/CMakeFiles/kvdb_test.dir/build.make unittest/kvdb/CMakeFiles/kvdb_test.dir/depend
+	$(MAKE) -f unittest/kvdb/CMakeFiles/kvdb_test.dir/build.make unittest/kvdb/CMakeFiles/kvdb_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=5,6,7,8,9 "Built target kvdb_test"
+.PHONY : unittest/kvdb/CMakeFiles/kvdb_test.dir/all
+
+# Include target in all.
+all: unittest/kvdb/CMakeFiles/kvdb_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+unittest/kvdb/CMakeFiles/kvdb_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 unittest/kvdb/CMakeFiles/kvdb_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 0
+.PHONY : unittest/kvdb/CMakeFiles/kvdb_test.dir/rule
+
+# Convenience name for target.
+kvdb_test: unittest/kvdb/CMakeFiles/kvdb_test.dir/rule
+
+.PHONY : kvdb_test
+
+# clean rule for target.
+unittest/kvdb/CMakeFiles/kvdb_test.dir/clean:
+	$(MAKE) -f unittest/kvdb/CMakeFiles/kvdb_test.dir/build.make unittest/kvdb/CMakeFiles/kvdb_test.dir/clean
+.PHONY : unittest/kvdb/CMakeFiles/kvdb_test.dir/clean
+
+# clean rule for target.
+clean: unittest/kvdb/CMakeFiles/kvdb_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory unittest/skiplist
+
+# Convenience name for "all" pass in the directory.
+unittest/skiplist/all: unittest/skiplist/CMakeFiles/skiplist_test.dir/all
+
+.PHONY : unittest/skiplist/all
+
+# Convenience name for "clean" pass in the directory.
+unittest/skiplist/clean: unittest/skiplist/CMakeFiles/skiplist_test.dir/clean
+
+.PHONY : unittest/skiplist/clean
+
+# Convenience name for "preinstall" pass in the directory.
+unittest/skiplist/preinstall:
+
+.PHONY : unittest/skiplist/preinstall
+
+#=============================================================================
+# Target rules for target unittest/skiplist/CMakeFiles/skiplist_test.dir
+
+# All Build rule for target.
+unittest/skiplist/CMakeFiles/skiplist_test.dir/all:
+	$(MAKE) -f unittest/skiplist/CMakeFiles/skiplist_test.dir/build.make unittest/skiplist/CMakeFiles/skiplist_test.dir/depend
+	$(MAKE) -f unittest/skiplist/CMakeFiles/skiplist_test.dir/build.make unittest/skiplist/CMakeFiles/skiplist_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=15,16,17,18,19 "Built target skiplist_test"
+.PHONY : unittest/skiplist/CMakeFiles/skiplist_test.dir/all
+
+# Include target in all.
+all: unittest/skiplist/CMakeFiles/skiplist_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+unittest/skiplist/CMakeFiles/skiplist_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 unittest/skiplist/CMakeFiles/skiplist_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 0
+.PHONY : unittest/skiplist/CMakeFiles/skiplist_test.dir/rule
+
+# Convenience name for target.
+skiplist_test: unittest/skiplist/CMakeFiles/skiplist_test.dir/rule
+
+.PHONY : skiplist_test
+
+# clean rule for target.
+unittest/skiplist/CMakeFiles/skiplist_test.dir/clean:
+	$(MAKE) -f unittest/skiplist/CMakeFiles/skiplist_test.dir/build.make unittest/skiplist/CMakeFiles/skiplist_test.dir/clean
+.PHONY : unittest/skiplist/CMakeFiles/skiplist_test.dir/clean
+
+# clean rule for target.
+clean: unittest/skiplist/CMakeFiles/skiplist_test.dir/clean
 
 .PHONY : clean
 

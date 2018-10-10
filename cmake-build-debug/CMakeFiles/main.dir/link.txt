@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/kvdb/kvdb.cpp.o CMakeFiles/main.dir/src/skiplist/skiplist.cpp.o CMakeFiles/main.dir/src/skiplist/node.cpp.o  -o main -lpthread -lglog -lgtest 

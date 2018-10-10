@@ -1,3 +1,10 @@
-/home/happen/ldb/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/happen/ldb/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/happen/ldb/cmake-build-debug/CMakeFiles/ldb.dir
+/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/main.dir
+/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/kvdb.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/CMakeFiles/edit_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/CMakeFiles/rebuild_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/CMakeFiles/kvdb_test.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/CMakeFiles/rebuild_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/CMakeFiles/edit_cache.dir
+/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/CMakeFiles/skiplist_test.dir

@@ -4,6 +4,7 @@
 #include <cmath>
 #include <shared_mutex>
 #include "node.h"
+#include "common.h"
 
 #ifndef LDB_SKIPLIST_H
 #define LDB_SKIPLIST_H
@@ -12,7 +13,7 @@ struct Handle{
     std::shared_ptr<char> value;
     uint64_t value_size;
 
-    Handle(std::shared_ptr<char> _value, uint64_t size):value(_value),value_size(size){
+    Handle(std::shared_ptr<char> _value, uint64_t size) : value(_value), value_size(size){
     }
     ~Handle() {
     }
@@ -24,16 +25,19 @@ public:
     ~SkipList();
 
     void print();
-    void dump();
-    void load();
-    Handle* search(std::string key) const;
-    void* insert(std::string key, const char* value, uint64_t value_size);
-    void remove(std::string key);
+    Status dump();
+    Status load();
+    Handle* search(const std::string& key) const;
+    Status insert(const std::string& key, const char* value, uint64_t value_size);
+    Status remove(const std::string& key);
 
+    SkipList (const SkipList &sl) = delete;
+    SkipList& operator=(const SkipList &sl) = delete;
+    SkipList (const SkipList &&sl) = delete;
+    SkipList& operator=(const SkipList &&sl) = delete;
 private:
     int random_level();
 
-    int list_level;
     Node* list_head;
     Node* list_tail;
     uint64_t count;

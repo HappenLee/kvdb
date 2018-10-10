@@ -1,17 +1,18 @@
 //
 // Created by happen on 9/15/18.
 //
-#include <random>
-#include <iostream>
+
 #include <fstream>
+#include <iostream>
+#include <random>
+
+#include <glog/logging.h>
 
 #include "skiplist.h"
-#include "common.h"
 
-SkipList::SkipList():count(0) {
+SkipList::SkipList() : count(0), list_head(new Node("", nullptr, 0, MAX_LEVEL)), \
+        list_tail(new Node("", nullptr, 0, MAX_LEVEL)) {
     srand(time(0));
-    list_head = new Node("", nullptr, 0, MAX_LEVEL);
-    list_tail = new Node("", nullptr, 0, MAX_LEVEL);
     for (int i = 0; i < MAX_LEVEL; ++i) {
         list_head->forward[i] = list_tail;
     }
@@ -44,7 +45,7 @@ int SkipList::random_level() {
     return level;
 }
 
-Handle* SkipList::search(std::string key) const {
+Handle* SkipList::search(const std::string& key) const {
     std::shared_lock<std::shared_mutex> lock(mutex);
     auto cur_node = list_head;
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
@@ -55,12 +56,16 @@ Handle* SkipList::search(std::string key) const {
 
     cur_node = cur_node->forward[0];
     if (cur_node->key == key) {
-        return new Handle(cur_node->value, cur_node->value_size);
+        auto handle = new(std::nothrow) Handle(cur_node->value, cur_node->value_size);
+        if (handle == nullptr) {
+            LOG(ERROR) << "Alloc handle failed";
+        }
+        return handle;
     }
     return nullptr;
 }
 
-void SkipList::remove(std::string key) {
+Status SkipList::remove(const std::string& key) {
     std::unique_lock<std::shared_mutex> lock(mutex);
     std::vector<Node*> update_forward_nodes(MAX_LEVEL);
     auto cur_node = list_head;
@@ -80,10 +85,16 @@ void SkipList::remove(std::string key) {
             update_forward_nodes[i]->forward[i] = cur_node->forward[i];
         }
         SAFE_DELETE(cur_node);
+        LOG(INFO) << "Remove " + key + " success";
+        count--;
+        return Success;
     }
+
+    LOG(WARNING) << "Reomve failed, do not find " + key;
+    return Fail;
 }
 
-void* SkipList::insert(std::string key, const char *value, uint64_t value_size) {
+Status SkipList::insert(const std::string& key, const char *value, uint64_t value_size) {
     std::unique_lock<std::shared_mutex> lock(mutex);
     std::vector<Node*> update_forward_nodes(MAX_LEVEL);
     auto cur_node = list_head;
@@ -98,10 +109,15 @@ void* SkipList::insert(std::string key, const char *value, uint64_t value_size) 
     cur_node = cur_node->forward[0];
 
     if (cur_node->key == key) {
-        char* new_value = new char[value_size];
+        char* new_value = new (std::nothrow)char[value_size];
+        if (new_value == nullptr) {
+            LOG(FATAL) << "Construct node faild, failed to allocate memory";
+            return Fail;
+        }
         memcpy(new_value, value, value_size);
         cur_node->value.reset(new_value);
         cur_node->value_size = value_size;
+        LOG(INFO) << "Update " + key + " success";
     } else {
         count++;
         int level = random_level();
@@ -110,7 +126,10 @@ void* SkipList::insert(std::string key, const char *value, uint64_t value_size) 
             new_node->forward[i] = update_forward_nodes[i]->forward[i];
             update_forward_nodes[i]->forward[i] = new_node;
         }
+        LOG(INFO) << "Insert " + key + " success";
     }
+
+    return Success;
 }
 
 void SkipList::print() {
@@ -133,14 +152,15 @@ void SkipList::print() {
     }
 }
 
-void SkipList::dump() {
+Status SkipList::dump() {
+    LOG(INFO) << "Dump skiplist to disk.";
     std::shared_lock<std::shared_mutex> lock(mutex);
-    std::fstream file("/home/happen/skiplist.dump", std::ios::binary|std::ios::out);
+    std::fstream file("./skiplist.dump", std::ios::binary|std::ios::out);
     file.write(reinterpret_cast<char *>(&count), 8);
 
     auto cur_node = list_head->forward[0];
     while (cur_node != list_tail) {
-        auto key_size = cur_node->key.size();
+        uint64_t key_size = cur_node->key.size();
         auto key = cur_node->key.c_str();
         file.write(reinterpret_cast<char *>(&key_size), 8);
         file.write(const_cast<char *>(key), key_size);
@@ -150,18 +170,25 @@ void SkipList::dump() {
     }
 
     file.close();
+
+    return Success;
 }
 
-void SkipList::load() {
-    std::fstream file("/home/happen/skiplist.dump", std::ios::binary|std::ios::in);
+Status SkipList::load() {
+    LOG(INFO) << "Load skiplist from disk.";
+    std::fstream file("./skiplist.dump", std::ios::binary|std::ios::in);
+    if (!file || file.eof()) {
+        return Success;
+    }
+
     uint64_t* insert_count = new uint64_t;
     std::shared_ptr<uint64_t> insert_count_ptr(insert_count);
     file.read(reinterpret_cast<char *>(insert_count), 8);
     auto count = *insert_count;
 
     while (count-- != 0) {
-        size_t* key_size = new size_t;
-        std::shared_ptr<size_t> key_size_ptr(key_size);
+        uint64_t* key_size = new uint64_t;
+        std::shared_ptr<uint64_t> key_size_ptr(key_size);
         file.read(reinterpret_cast<char *>(key_size), 8);
 
         char* key_cstr = new char[*key_size];
@@ -179,6 +206,8 @@ void SkipList::load() {
 
         insert(key, value, *value_size);
     }
+
+    return Success;
 }
 
 

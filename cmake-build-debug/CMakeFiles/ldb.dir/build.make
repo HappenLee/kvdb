@@ -43,10 +43,10 @@ RM = /usr/share/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/happen/ldb
+CMAKE_SOURCE_DIR = /home/happen/mycode/ldb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/happen/ldb/cmake-build-debug
+CMAKE_BINARY_DIR = /home/happen/mycode/ldb/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ldb.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ldb.dir/flags.make
 
 CMakeFiles/ldb.dir/main.cpp.o: CMakeFiles/ldb.dir/flags.make
 CMakeFiles/ldb.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ldb.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/main.cpp.o -c /home/happen/ldb/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ldb.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/main.cpp.o -c /home/happen/mycode/ldb/main.cpp
 
 CMakeFiles/ldb.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/ldb/main.cpp > CMakeFiles/ldb.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/main.cpp > CMakeFiles/ldb.dir/main.cpp.i
 
 CMakeFiles/ldb.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/ldb/main.cpp -o CMakeFiles/ldb.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/main.cpp -o CMakeFiles/ldb.dir/main.cpp.s
 
 CMakeFiles/ldb.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ldb.dir/main.cpp.o.provides.build: CMakeFiles/ldb.dir/main.cpp.o
 
 CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o: CMakeFiles/ldb.dir/flags.make
 CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o: ../src/skiplist/skiplist.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o -c /home/happen/ldb/src/skiplist/skiplist.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o -c /home/happen/mycode/ldb/src/skiplist/skiplist.cpp
 
 CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/ldb/src/skiplist/skiplist.cpp > CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/src/skiplist/skiplist.cpp > CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.i
 
 CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/ldb/src/skiplist/skiplist.cpp -o CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/src/skiplist/skiplist.cpp -o CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.s
 
 CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o.provides.build: CMakeFiles/ldb.di
 
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o: CMakeFiles/ldb.dir/flags.make
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o: ../src/kvdb/kvdb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o -c /home/happen/ldb/src/kvdb/kvdb.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o -c /home/happen/mycode/ldb/src/kvdb/kvdb.cpp
 
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/ldb/src/kvdb/kvdb.cpp > CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/src/kvdb/kvdb.cpp > CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.i
 
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/ldb/src/kvdb/kvdb.cpp -o CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/src/kvdb/kvdb.cpp -o CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.s
 
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o.requires:
 
@@ -129,11 +129,86 @@ CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o.provides: CMakeFiles/ldb.dir/src/kvdb/kvd
 CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o.provides.build: CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o
 
 
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.o: CMakeFiles/ldb.dir/flags.make
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.o: ../src/skiplist/node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ldb.dir/src/skiplist/node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/src/skiplist/node.cpp.o -c /home/happen/mycode/ldb/src/skiplist/node.cpp
+
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/src/skiplist/node.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/src/skiplist/node.cpp > CMakeFiles/ldb.dir/src/skiplist/node.cpp.i
+
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/src/skiplist/node.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/src/skiplist/node.cpp -o CMakeFiles/ldb.dir/src/skiplist/node.cpp.s
+
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.requires:
+
+.PHONY : CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.requires
+
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.provides: CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.provides.build
+.PHONY : CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.provides
+
+CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.provides.build: CMakeFiles/ldb.dir/src/skiplist/node.cpp.o
+
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o: CMakeFiles/ldb.dir/flags.make
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o: ../unittest/kvdb/kvdb_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o -c /home/happen/mycode/ldb/unittest/kvdb/kvdb_test.cpp
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/unittest/kvdb/kvdb_test.cpp > CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.i
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/unittest/kvdb/kvdb_test.cpp -o CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.s
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.requires:
+
+.PHONY : CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.requires
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.provides: CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.provides.build
+.PHONY : CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.provides
+
+CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.provides.build: CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o
+
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o: CMakeFiles/ldb.dir/flags.make
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o: ../unittest/skiplist/skiplist_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o -c /home/happen/mycode/ldb/unittest/skiplist/skiplist_test.cpp
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/happen/mycode/ldb/unittest/skiplist/skiplist_test.cpp > CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.i
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/happen/mycode/ldb/unittest/skiplist/skiplist_test.cpp -o CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.s
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.requires:
+
+.PHONY : CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.requires
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.provides: CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.requires
+	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.provides.build
+.PHONY : CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.provides
+
+CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.provides.build: CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o
+
+
 # Object files for target ldb
 ldb_OBJECTS = \
 "CMakeFiles/ldb.dir/main.cpp.o" \
 "CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o" \
-"CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o"
+"CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o" \
+"CMakeFiles/ldb.dir/src/skiplist/node.cpp.o" \
+"CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o" \
+"CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o"
 
 # External object files for target ldb
 ldb_EXTERNAL_OBJECTS =
@@ -141,9 +216,12 @@ ldb_EXTERNAL_OBJECTS =
 ldb: CMakeFiles/ldb.dir/main.cpp.o
 ldb: CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o
 ldb: CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o
+ldb: CMakeFiles/ldb.dir/src/skiplist/node.cpp.o
+ldb: CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o
+ldb: CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o
 ldb: CMakeFiles/ldb.dir/build.make
 ldb: CMakeFiles/ldb.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/happen/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ldb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/happen/mycode/ldb/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ldb"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ldb.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,6 +232,9 @@ CMakeFiles/ldb.dir/build: ldb
 CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/main.cpp.o.requires
 CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o.requires
 CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o.requires
+CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/src/skiplist/node.cpp.o.requires
+CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/unittest/kvdb/kvdb_test.cpp.o.requires
+CMakeFiles/ldb.dir/requires: CMakeFiles/ldb.dir/unittest/skiplist/skiplist_test.cpp.o.requires
 
 .PHONY : CMakeFiles/ldb.dir/requires
 
@@ -162,6 +243,6 @@ CMakeFiles/ldb.dir/clean:
 .PHONY : CMakeFiles/ldb.dir/clean
 
 CMakeFiles/ldb.dir/depend:
-	cd /home/happen/ldb/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/happen/ldb /home/happen/ldb /home/happen/ldb/cmake-build-debug /home/happen/ldb/cmake-build-debug /home/happen/ldb/cmake-build-debug/CMakeFiles/ldb.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/happen/mycode/ldb/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/happen/mycode/ldb /home/happen/mycode/ldb /home/happen/mycode/ldb/cmake-build-debug /home/happen/mycode/ldb/cmake-build-debug /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/ldb.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ldb.dir/depend
 

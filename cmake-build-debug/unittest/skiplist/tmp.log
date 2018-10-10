@@ -1,0 +1,4 @@
+[ 20%] Building CXX object unittest/skiplist/CMakeFiles/skiplist_test.dir/skiplist_test.cpp.o
+unittest/skiplist/CMakeFiles/skiplist_test.dir/build.make:62: recipe for target 'unittest/skiplist/CMakeFiles/skiplist_test.dir/skiplist_test.cpp.o' failed
+CMakeFiles/Makefile2:177: recipe for target 'unittest/skiplist/CMakeFiles/skiplist_test.dir/all' failed
+Makefile:83: recipe for target 'all' failed

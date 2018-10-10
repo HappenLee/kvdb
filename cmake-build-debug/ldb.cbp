@@ -5,49 +5,103 @@
 		<Option title="ldb"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\unittest\;CMake Files\unittest\kvdb\;CMake Files\unittest\skiplist\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/happen/ldb/cmake-build-debug"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/happen/ldb/cmake-build-debug"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/happen/ldb/cmake-build-debug"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ldb">
-				<Option output="/home/happen/ldb/cmake-build-debug/ldb" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/happen/ldb/cmake-build-debug"/>
+			<Target title="kvdb">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/libkvdb.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/happen/ldb/include"/>
-					<Add directory="/home/happen/ldb/include/common"/>
-					<Add directory="/home/happen/ldb/include/skiplist"/>
-					<Add directory="/home/happen/ldb/include/kvdb"/>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -58,23 +112,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 ldb"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 kvdb"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ldb/fast">
-				<Option output="/home/happen/ldb/cmake-build-debug/ldb" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/happen/ldb/cmake-build-debug"/>
+			<Target title="kvdb/fast">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/libkvdb.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/happen/ldb/include"/>
-					<Add directory="/home/happen/ldb/include/common"/>
-					<Add directory="/home/happen/ldb/include/skiplist"/>
-					<Add directory="/home/happen/ldb/include/kvdb"/>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -85,36 +139,180 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 ldb/fast"/>
-					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 kvdb/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kvdb_test">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/kvdb_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 kvdb_test"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="kvdb_test/fast">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/kvdb_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 kvdb_test/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/kvdb/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="skiplist_test">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/skiplist_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 skiplist_test"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="skiplist_test/fast">
+				<Option output="/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/skiplist_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/happen/mycode/ldb/include"/>
+					<Add directory="/home/happen/mycode/ldb/include/common"/>
+					<Add directory="/home/happen/mycode/ldb/include/skiplist"/>
+					<Add directory="/home/happen/mycode/ldb/include/kvdb"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 skiplist_test/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/happen/mycode/ldb/cmake-build-debug/unittest/skiplist/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/happen/ldb/include/common/common.h">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/include/common/common.h">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/include/kvdb/kvdb.h">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/include/kvdb/kvdb.h">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/include/skiplist/node.h">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/include/skiplist/node.h">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/include/skiplist/skiplist.h">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/include/skiplist/skiplist.h">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/main.cpp">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/main.cpp">
+			<Option target="main"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/src/kvdb/kvdb.cpp">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/src/kvdb/kvdb.cpp">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/src/skiplist/skiplist.cpp">
-			<Option target="ldb"/>
+		<Unit filename="/home/happen/mycode/ldb/src/skiplist/node.cpp">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
 		</Unit>
-		<Unit filename="/home/happen/ldb/CMakeLists.txt">
+		<Unit filename="/home/happen/mycode/ldb/src/skiplist/skiplist.cpp">
+			<Option target="main"/>
+			<Option target="kvdb"/>
+			<Option target="kvdb_test"/>
+			<Option target="skiplist_test"/>
+		</Unit>
+		<Unit filename="/home/happen/mycode/ldb/unittest/kvdb/kvdb_test.cpp">
+			<Option target="kvdb_test"/>
+		</Unit>
+		<Unit filename="/home/happen/mycode/ldb/unittest/skiplist/skiplist_test.cpp">
+			<Option target="skiplist_test"/>
+		</Unit>
+		<Unit filename="/home/happen/mycode/ldb/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/happen/mycode/ldb/unittest/kvdb/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\unittest\kvdb\"/>
+		</Unit>
+		<Unit filename="/home/happen/mycode/ldb/unittest/skiplist/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\unittest\skiplist\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

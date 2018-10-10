@@ -48,10 +48,10 @@ RM = /usr/share/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/happen/ldb
+CMAKE_SOURCE_DIR = /home/happen/mycode/ldb
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/happen/ldb/cmake-build-debug
+CMAKE_BINARY_DIR = /home/happen/mycode/ldb/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/ldb/cmake-build-debug/CMakeFiles /home/happen/ldb/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/ldb/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/happen/mycode/ldb/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,56 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ldb
+# Target rules for targets named main
 
 # Build rule for target.
-ldb: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ldb
-.PHONY : ldb
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-ldb/fast:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/build
-.PHONY : ldb/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named kvdb
+
+# Build rule for target.
+kvdb: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kvdb
+.PHONY : kvdb
+
+# fast build rule for target.
+kvdb/fast:
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/build
+.PHONY : kvdb/fast
+
+#=============================================================================
+# Target rules for targets named kvdb_test
+
+# Build rule for target.
+kvdb_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kvdb_test
+.PHONY : kvdb_test
+
+# fast build rule for target.
+kvdb_test/fast:
+	$(MAKE) -f unittest/kvdb/CMakeFiles/kvdb_test.dir/build.make unittest/kvdb/CMakeFiles/kvdb_test.dir/build
+.PHONY : kvdb_test/fast
+
+#=============================================================================
+# Target rules for targets named skiplist_test
+
+# Build rule for target.
+skiplist_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 skiplist_test
+.PHONY : skiplist_test
+
+# fast build rule for target.
+skiplist_test/fast:
+	$(MAKE) -f unittest/skiplist/CMakeFiles/skiplist_test.dir/build.make unittest/skiplist/CMakeFiles/skiplist_test.dir/build
+.PHONY : skiplist_test/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +168,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +177,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +186,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/kvdb/kvdb.o: src/kvdb/kvdb.cpp.o
@@ -156,7 +195,8 @@ src/kvdb/kvdb.o: src/kvdb/kvdb.cpp.o
 
 # target to build an object file
 src/kvdb/kvdb.cpp.o:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kvdb/kvdb.cpp.o
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/kvdb/kvdb.cpp.o
 .PHONY : src/kvdb/kvdb.cpp.o
 
 src/kvdb/kvdb.i: src/kvdb/kvdb.cpp.i
@@ -165,7 +205,8 @@ src/kvdb/kvdb.i: src/kvdb/kvdb.cpp.i
 
 # target to preprocess a source file
 src/kvdb/kvdb.cpp.i:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kvdb/kvdb.cpp.i
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/kvdb/kvdb.cpp.i
 .PHONY : src/kvdb/kvdb.cpp.i
 
 src/kvdb/kvdb.s: src/kvdb/kvdb.cpp.s
@@ -174,8 +215,39 @@ src/kvdb/kvdb.s: src/kvdb/kvdb.cpp.s
 
 # target to generate assembly for a file
 src/kvdb/kvdb.cpp.s:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/kvdb/kvdb.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/kvdb/kvdb.cpp.s
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/kvdb/kvdb.cpp.s
 .PHONY : src/kvdb/kvdb.cpp.s
+
+src/skiplist/node.o: src/skiplist/node.cpp.o
+
+.PHONY : src/skiplist/node.o
+
+# target to build an object file
+src/skiplist/node.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/node.cpp.o
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/node.cpp.o
+.PHONY : src/skiplist/node.cpp.o
+
+src/skiplist/node.i: src/skiplist/node.cpp.i
+
+.PHONY : src/skiplist/node.i
+
+# target to preprocess a source file
+src/skiplist/node.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/node.cpp.i
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/node.cpp.i
+.PHONY : src/skiplist/node.cpp.i
+
+src/skiplist/node.s: src/skiplist/node.cpp.s
+
+.PHONY : src/skiplist/node.s
+
+# target to generate assembly for a file
+src/skiplist/node.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/node.cpp.s
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/node.cpp.s
+.PHONY : src/skiplist/node.cpp.s
 
 src/skiplist/skiplist.o: src/skiplist/skiplist.cpp.o
 
@@ -183,7 +255,8 @@ src/skiplist/skiplist.o: src/skiplist/skiplist.cpp.o
 
 # target to build an object file
 src/skiplist/skiplist.cpp.o:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/skiplist.cpp.o
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/skiplist.cpp.o
 .PHONY : src/skiplist/skiplist.cpp.o
 
 src/skiplist/skiplist.i: src/skiplist/skiplist.cpp.i
@@ -192,7 +265,8 @@ src/skiplist/skiplist.i: src/skiplist/skiplist.cpp.i
 
 # target to preprocess a source file
 src/skiplist/skiplist.cpp.i:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/skiplist.cpp.i
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/skiplist.cpp.i
 .PHONY : src/skiplist/skiplist.cpp.i
 
 src/skiplist/skiplist.s: src/skiplist/skiplist.cpp.s
@@ -201,7 +275,8 @@ src/skiplist/skiplist.s: src/skiplist/skiplist.cpp.s
 
 # target to generate assembly for a file
 src/skiplist/skiplist.cpp.s:
-	$(MAKE) -f CMakeFiles/ldb.dir/build.make CMakeFiles/ldb.dir/src/skiplist/skiplist.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/skiplist/skiplist.cpp.s
+	$(MAKE) -f CMakeFiles/kvdb.dir/build.make CMakeFiles/kvdb.dir/src/skiplist/skiplist.cpp.s
 .PHONY : src/skiplist/skiplist.cpp.s
 
 # Help Target
@@ -211,14 +286,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... main"
 	@echo "... edit_cache"
-	@echo "... ldb"
+	@echo "... kvdb"
+	@echo "... kvdb_test"
+	@echo "... skiplist_test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... src/kvdb/kvdb.o"
 	@echo "... src/kvdb/kvdb.i"
 	@echo "... src/kvdb/kvdb.s"
+	@echo "... src/skiplist/node.o"
+	@echo "... src/skiplist/node.i"
+	@echo "... src/skiplist/node.s"
 	@echo "... src/skiplist/skiplist.o"
 	@echo "... src/skiplist/skiplist.i"
 	@echo "... src/skiplist/skiplist.s"
