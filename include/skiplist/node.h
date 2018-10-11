@@ -21,10 +21,10 @@ public:
     Node& operator=(const Node &&node) = delete;
 private:
     Node();
-    std::string key;
-    std::shared_ptr<char> value;
-    uint64_t value_size;
-    std::vector<Node*> forward;
+    std::string _key;
+    std::shared_ptr<char> _value;
+    uint64_t _value_size;
+    std::vector<Node*> _forward;
 
     friend class SkipList;
 };

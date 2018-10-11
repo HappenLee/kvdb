@@ -10,24 +10,24 @@
 
 #include "skiplist.h"
 
-SkipList::SkipList() : count(0), list_head(new Node("", nullptr, 0, MAX_LEVEL)), \
-        list_tail(new Node("", nullptr, 0, MAX_LEVEL)) {
+SkipList::SkipList() : _count(0), _list_head(new Node("", nullptr, 0, MAX_LEVEL)), \
+        _list_tail(new Node("", nullptr, 0, MAX_LEVEL)) {
     srand(time(0));
     for (int i = 0; i < MAX_LEVEL; ++i) {
-        list_head->forward[i] = list_tail;
+        _list_head->_forward[i] = _list_tail;
     }
 }
 
 
 SkipList::~SkipList() {
-    auto cur_node = list_head->forward[0];
-    while (cur_node->forward[0] != list_tail) {
-        auto next_node = cur_node->forward[0];
+    auto cur_node = _list_head->_forward[0];
+    while (cur_node->_forward[0] != _list_tail) {
+        auto next_node = cur_node->_forward[0];
         SAFE_DELETE(cur_node);
         cur_node = next_node;
     }
-    SAFE_DELETE(list_head);
-    SAFE_DELETE(list_tail);
+    SAFE_DELETE(_list_head);
+    SAFE_DELETE(_list_tail);
 }
 
 int SkipList::random_level() {
@@ -46,17 +46,17 @@ int SkipList::random_level() {
 }
 
 Handle* SkipList::search(const std::string& key) const {
-    std::shared_lock<std::shared_mutex> lock(mutex);
-    auto cur_node = list_head;
+    std::shared_lock<std::shared_mutex> lock(_mutex);
+    auto cur_node = _list_head;
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
-        while (cur_node->forward[i]->key != "" && cur_node->forward[i]->key < key) {
-                cur_node = cur_node->forward[i];
+        while (cur_node->_forward[i]->_key != "" && cur_node->_forward[i]->_key < key) {
+            cur_node = cur_node->_forward[i];
         }
     }
 
-    cur_node = cur_node->forward[0];
-    if (cur_node->key == key) {
-        auto handle = new(std::nothrow) Handle(cur_node->value, cur_node->value_size);
+    cur_node = cur_node->_forward[0];
+    if (cur_node->_key == key) {
+        auto handle = new(std::nothrow) Handle(cur_node->_value, cur_node->_value_size);
         if (handle == nullptr) {
             LOG(ERROR) << "Alloc handle failed";
         }
@@ -66,87 +66,87 @@ Handle* SkipList::search(const std::string& key) const {
 }
 
 Status SkipList::remove(const std::string& key) {
-    std::unique_lock<std::shared_mutex> lock(mutex);
+    std::unique_lock<std::shared_mutex> lock(_mutex);
     std::vector<Node*> update_forward_nodes(MAX_LEVEL);
-    auto cur_node = list_head;
+    auto cur_node = _list_head;
 
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
-        while (cur_node->forward[i]->key != "" && cur_node->forward[i]->key < key) {
-            cur_node = cur_node->forward[i];
+        while (cur_node->_forward[i]->_key != "" && cur_node->_forward[i]->_key < key) {
+            cur_node = cur_node->_forward[i];
         }
         update_forward_nodes[i] = cur_node;
     }
 
-    cur_node = cur_node->forward[0];
+    cur_node = cur_node->_forward[0];
 
-    if (cur_node->key == key) {
-        int level = cur_node->forward.size();
+    if (cur_node->_key == key) {
+        int level = cur_node->_forward.size();
         for (int i = 0; i < level; i++) {
-            update_forward_nodes[i]->forward[i] = cur_node->forward[i];
+            update_forward_nodes[i]->_forward[i] = cur_node->_forward[i];
         }
         SAFE_DELETE(cur_node);
         LOG(INFO) << "Remove " + key + " success";
-        count--;
-        return Success;
+        _count--;
+        return Status::SUCCESS;
     }
 
     LOG(WARNING) << "Reomve failed, do not find " + key;
-    return Fail;
+    return Status::FAIL;
 }
 
 Status SkipList::insert(const std::string& key, const char *value, uint64_t value_size) {
-    std::unique_lock<std::shared_mutex> lock(mutex);
+    std::unique_lock<std::shared_mutex> lock(_mutex);
     std::vector<Node*> update_forward_nodes(MAX_LEVEL);
-    auto cur_node = list_head;
+    auto cur_node = _list_head;
 
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
-        while (cur_node->forward[i]->key != "" && cur_node->forward[i]->key < key) {
-            cur_node = cur_node->forward[i];
+        while (cur_node->_forward[i]->_key != "" && cur_node->_forward[i]->_key < key) {
+            cur_node = cur_node->_forward[i];
         }
         update_forward_nodes[i] = cur_node;
     }
 
-    cur_node = cur_node->forward[0];
+    cur_node = cur_node->_forward[0];
 
-    if (cur_node->key == key) {
+    if (cur_node->_key == key) {
         char* new_value = new (std::nothrow)char[value_size];
         if (new_value == nullptr) {
             LOG(FATAL) << "Construct node faild, failed to allocate memory";
-            return Fail;
+            return Status::FAIL;
         }
         memcpy(new_value, value, value_size);
-        cur_node->value.reset(new_value);
-        cur_node->value_size = value_size;
+        cur_node->_value.reset(new_value);
+        cur_node->_value_size = value_size;
         LOG(INFO) << "Update " + key + " success";
     } else {
-        count++;
+        _count++;
         int level = random_level();
         Node* new_node = new Node(key, value, value_size, level);
         for (int i = 0; i < level; i++) {
-            new_node->forward[i] = update_forward_nodes[i]->forward[i];
-            update_forward_nodes[i]->forward[i] = new_node;
+            new_node->_forward[i] = update_forward_nodes[i]->_forward[i];
+            update_forward_nodes[i]->_forward[i] = new_node;
         }
         LOG(INFO) << "Insert " + key + " success";
     }
 
-    return Success;
+    return Status::SUCCESS;
 }
 
 void SkipList::print() {
-    std::shared_lock<std::shared_mutex> lock(mutex);
+    std::shared_lock<std::shared_mutex> lock(_mutex);
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
-        auto cur_node = list_head->forward[i];
-        while (cur_node != list_tail) {
-            std::cout << cur_node->key + "->";
-            cur_node = cur_node->forward[i];
+        auto cur_node = _list_head->_forward[i];
+        while (cur_node != _list_tail) {
+            std::cout << cur_node->_key + "->";
+            cur_node = cur_node->_forward[i];
         }
         std::cout << "NIL" << std::endl;
     }
     for (int i = MAX_LEVEL - 1; i >= 0; i--) {
-        auto cur_node = list_head->forward[i];
-        while (cur_node != list_tail) {
-            std::cout << std::string(cur_node->value.get()) + "->";
-            cur_node = cur_node->forward[i];
+        auto cur_node = _list_head->_forward[i];
+        while (cur_node != _list_tail) {
+            std::cout << std::string(cur_node->_value.get()) + "->";
+            cur_node = cur_node->_forward[i];
         }
         std::cout << "NIL" << std::endl;
     }
@@ -154,42 +154,42 @@ void SkipList::print() {
 
 Status SkipList::dump() {
     LOG(INFO) << "Dump skiplist to disk.";
-    std::shared_lock<std::shared_mutex> lock(mutex);
+    std::shared_lock<std::shared_mutex> lock(_mutex);
     std::fstream file("./skiplist.dump", std::ios::binary|std::ios::out);
-    file.write(reinterpret_cast<char *>(&count), 8);
+    file.write(reinterpret_cast<char *>(&_count), sizeof(uint64_t));
 
-    auto cur_node = list_head->forward[0];
-    while (cur_node != list_tail) {
-        uint64_t key_size = cur_node->key.size();
-        auto key = cur_node->key.c_str();
-        file.write(reinterpret_cast<char *>(&key_size), 8);
+    auto cur_node = _list_head->_forward[0];
+    while (cur_node != _list_tail) {
+        uint64_t key_size = cur_node->_key.size();
+        auto key = cur_node->_key.c_str();
+        file.write(reinterpret_cast<char *>(&key_size), sizeof(uint64_t));
         file.write(const_cast<char *>(key), key_size);
-        file.write(reinterpret_cast<char *>(&cur_node->value_size), 8);
-        file.write(reinterpret_cast<char *>(cur_node->value.get()), cur_node->value_size);
-        cur_node = cur_node->forward[0];
+        file.write(reinterpret_cast<char *>(&cur_node->_value_size), sizeof(uint64_t));
+        file.write(reinterpret_cast<char *>(cur_node->_value.get()), cur_node->_value_size);
+        cur_node = cur_node->_forward[0];
     }
 
     file.close();
 
-    return Success;
+    return Status::SUCCESS;
 }
 
 Status SkipList::load() {
     LOG(INFO) << "Load skiplist from disk.";
     std::fstream file("./skiplist.dump", std::ios::binary|std::ios::in);
     if (!file || file.eof()) {
-        return Success;
+        return Status::SUCCESS;
     }
 
     uint64_t* insert_count = new uint64_t;
     std::shared_ptr<uint64_t> insert_count_ptr(insert_count);
-    file.read(reinterpret_cast<char *>(insert_count), 8);
+    file.read(reinterpret_cast<char *>(insert_count), sizeof(uint64_t));
     auto count = *insert_count;
 
     while (count-- != 0) {
         uint64_t* key_size = new uint64_t;
         std::shared_ptr<uint64_t> key_size_ptr(key_size);
-        file.read(reinterpret_cast<char *>(key_size), 8);
+        file.read(reinterpret_cast<char *>(key_size), sizeof(uint64_t));
 
         char* key_cstr = new char[*key_size];
         std::shared_ptr<char> key_ptr(key_cstr);
@@ -198,7 +198,7 @@ Status SkipList::load() {
 
         uint64_t* value_size = new uint64_t;
         std::shared_ptr<uint64_t> value_size_ptr(value_size);
-        file.read(reinterpret_cast<char *>(value_size), 8);
+        file.read(reinterpret_cast<char *>(value_size), sizeof(uint64_t));
 
         char* value = new char[*value_size];
         std::shared_ptr<char> value_ptr(value);
@@ -207,7 +207,7 @@ Status SkipList::load() {
         insert(key, value, *value_size);
     }
 
-    return Success;
+    return Status::SUCCESS;
 }
 
 

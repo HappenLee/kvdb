@@ -20,18 +20,18 @@ public:
 };
 
 TEST_F(TestKVDB, setstr) {
-    ASSERT_EQ(kvdb->set("1", "happen"), Success);
-    ASSERT_EQ(kvdb->set("2", "lee"), Success);
-    ASSERT_EQ(kvdb->set("happen", "1"), Success);
-    ASSERT_EQ(kvdb->set("lee", "2"), Success);
+    ASSERT_EQ(kvdb->set("1", "happen"), Status::SUCCESS);
+    ASSERT_EQ(kvdb->set("2", "lee"), Status::SUCCESS);
+    ASSERT_EQ(kvdb->set("happen", "1"), Status::SUCCESS);
+    ASSERT_EQ(kvdb->set("lee", "2"), Status::SUCCESS);
 }
 
 TEST_F(TestKVDB, setvalue) {
     uint64_t x = 20;
     uint32_t y = 5;
 
-    ASSERT_EQ(kvdb->set("20", reinterpret_cast<char *>(&x), 8), Success);
-    ASSERT_EQ(kvdb->set("5", reinterpret_cast<char *>(&y), 4), Success);
+    ASSERT_EQ(kvdb->set("20", reinterpret_cast<char *>(&x), 8), Status::SUCCESS);
+    ASSERT_EQ(kvdb->set("5", reinterpret_cast<char *>(&y), 4), Status::SUCCESS);
 }
 
 TEST_F(TestKVDB, getstr) {
@@ -47,29 +47,29 @@ TEST_F(TestKVDB, getvalue) {
     uint32_t* y = new uint32_t;
     uint32_t* y_len = new uint32_t;
 
-    ASSERT_EQ(kvdb->get("20", reinterpret_cast<char **>(&x), x_len), Success);
-    ASSERT_EQ(kvdb->get("5", reinterpret_cast<char **>(&y), y_len), Success);
+    ASSERT_EQ(kvdb->get("20", reinterpret_cast<char **>(&x), x_len), Status::SUCCESS);
+    ASSERT_EQ(kvdb->get("5", reinterpret_cast<char **>(&y), y_len), Status::SUCCESS);
 
     ASSERT_EQ(*x, 20);
     ASSERT_EQ(*y, 5);
 }
 
 TEST_F(TestKVDB, remove) {
-    ASSERT_EQ(kvdb->remove("1"), Success);
+    ASSERT_EQ(kvdb->remove("1"), Status::SUCCESS);
     ASSERT_EQ(kvdb->get("1"), "");
-    ASSERT_EQ(kvdb->remove("2"), Success);
+    ASSERT_EQ(kvdb->remove("2"), Status::SUCCESS);
     ASSERT_EQ(kvdb->get("2"), "");
 
 
-    ASSERT_EQ(kvdb->remove("20"), Success);
-    ASSERT_EQ(kvdb->remove("5"), Success);
+    ASSERT_EQ(kvdb->remove("20"), Status::SUCCESS);
+    ASSERT_EQ(kvdb->remove("5"), Status::SUCCESS);
 
     uint64_t* x = new uint64_t;
     uint32_t* x_len = new uint32_t;
     uint32_t* y = new uint32_t;
     uint32_t* y_len = new uint32_t;
-    ASSERT_EQ(kvdb->get("20", reinterpret_cast<char **>(&x), x_len), Fail);
-    ASSERT_EQ(kvdb->get("5", reinterpret_cast<char **>(&y), y_len), Fail);
+    ASSERT_EQ(kvdb->get("20", reinterpret_cast<char **>(&x), x_len), Status::FAIL);
+    ASSERT_EQ(kvdb->get("5", reinterpret_cast<char **>(&y), y_len), Status::FAIL);
 }
 
 int main(int argc, char** argv) {

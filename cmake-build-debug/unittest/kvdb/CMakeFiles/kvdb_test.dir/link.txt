@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/kvdb_test.dir/kvdb_test.cpp.o CMakeFiles/kvdb_test.dir/__/__/src/kvdb/kvdb.cpp.o CMakeFiles/kvdb_test.dir/__/__/src/skiplist/skiplist.cpp.o CMakeFiles/kvdb_test.dir/__/__/src/skiplist/node.cpp.o  -o kvdb_test -lpthread -lglog -lgtest 

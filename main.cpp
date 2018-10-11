@@ -3,6 +3,7 @@
 
 #include "glog/logging.h"
 #include "skiplist.h"
+#include "common.h"
 
 using namespace std;
 
@@ -21,8 +22,8 @@ int main(int argc, char* argv[]) {
     std::string(sl->search("1")->value.get()) == "happen";
     sl->search("3") == nullptr;
 
-    sl->remove("1") == Success;
-    sl->remove("1") == Fail;
+    sl->remove("1") == Status::SUCCESS;
+    sl->remove("1") == Status::FAIL;
     sl->search("1") == nullptr;
     sl->dump();
     sl->load();

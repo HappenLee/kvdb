@@ -1,2 +1,0 @@
-/usr/bin/ar qc libkvdb.a  CMakeFiles/kvdb.dir/src/kvdb/kvdb.cpp.o CMakeFiles/kvdb.dir/src/skiplist/skiplist.cpp.o CMakeFiles/kvdb.dir/src/skiplist/node.cpp.o
-/usr/bin/ranlib libkvdb.a

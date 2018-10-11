@@ -5,12 +5,12 @@
 #ifndef LDB_KVDB_H
 #define LDB_KVDB_H
 
-#include "skiplist/skiplist.h"
+#include "skiplist.h"
 
 class KVDB {
 public:
     static KVDB* get_instance() {
-        return singleton_kvdb;
+        return _s_singleton_kvdb;
     }
     Status get(const std::string &key, char** value, uint32_t *value_size);
     std::string get(const std::string &key);
@@ -26,10 +26,10 @@ public:
     KVDB (const KVDB &&db) = delete;
     KVDB& operator=(const KVDB &&db) = delete;
 private:
-    static KVDB* singleton_kvdb;
+    static KVDB* _s_singleton_kvdb;
     KVDB();
     ~KVDB();
-    SkipList skip_list;
+    SkipList _skip_list;
 };
 
 

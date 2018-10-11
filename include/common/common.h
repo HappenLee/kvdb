@@ -7,7 +7,7 @@
 
 #include <stdint-gcc.h>
 
-enum Status { Success, Fail };
+enum class Status { SUCCESS, FAIL };
 
 #ifndef SAFE_FREE
 #define SAFE_FREE(ptr) \
