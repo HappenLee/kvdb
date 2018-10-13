@@ -2,6 +2,7 @@
 // Created by happen on 9/15/18.
 //
 
+#pragma once
 #ifndef LDB_KVDB_H
 #define LDB_KVDB_H
 

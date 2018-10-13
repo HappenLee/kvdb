@@ -1,12 +1,14 @@
 //
 // Created by happen on 9/15/18.
 //
+
 #include <cmath>
 #include <shared_mutex>
 
 #include "common.h"
 #include "node.h"
 
+#pragma once
 #ifndef LDB_SKIPLIST_H
 #define LDB_SKIPLIST_H
 

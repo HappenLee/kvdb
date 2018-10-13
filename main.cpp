@@ -5,8 +5,6 @@
 #include "skiplist.h"
 #include "common.h"
 
-using namespace std;
-
 int main(int argc, char* argv[]) {
     SkipList* sl = new SkipList();
     std::string test_string("happen");

@@ -5,16 +5,18 @@
 
 #include "kvdb.h"
 
-class TestKVDB:public testing::Test {
+class TestKVDB : public testing::Test {
 public:
     virtual void SetUp() {
-        std::cout <<"Set Up Test" << std::endl;
+        std::cout << "Set Up Test" << std::endl;
         kvdb = KVDB::get_instance();
     }
     virtual void TearDown() {
-        std::cout <<"Tear Down Test" << std::endl;
+        std::cout << "Tear Down Test" << std::endl;
         kvdb->save();
     }
+
+    ~TestKVDB(){};
 
     KVDB* kvdb;
 };

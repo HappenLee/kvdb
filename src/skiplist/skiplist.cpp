@@ -18,7 +18,6 @@ SkipList::SkipList() : _count(0), _list_head(new Node("", nullptr, 0, MAX_LEVEL)
     }
 }
 
-
 SkipList::~SkipList() {
     auto cur_node = _list_head->_forward[0];
     while (cur_node->_forward[0] != _list_tail) {

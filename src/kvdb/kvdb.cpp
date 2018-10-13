@@ -19,7 +19,6 @@ void KVDB::save() {
     _skip_list.dump();
 }
 
-
 Status KVDB::get(const std::string &key, char **value, uint32_t *value_size) {
     auto handle = _skip_list.search(key);
     if (handle != nullptr) {
