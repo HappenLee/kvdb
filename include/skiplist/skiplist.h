@@ -13,10 +13,10 @@
 #define LDB_SKIPLIST_H
 
 struct Handle{
-    std::shared_ptr<char> value;
+    std::shared_ptr<char[]> value;
     uint64_t value_size;
 
-    Handle(std::shared_ptr<char> _value, uint64_t size) : \
+    Handle(std::shared_ptr<char[]> _value, uint64_t size) : \
             value(_value), value_size(size){}
     ~Handle() {}
 };

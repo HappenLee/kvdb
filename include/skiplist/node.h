@@ -23,7 +23,7 @@ public:
 private:
     Node();
     std::string _key;
-    std::shared_ptr<char> _value;
+    std::shared_ptr<char[]> _value;
     uint64_t _value_size;
     std::vector<Node*> _forward;
 

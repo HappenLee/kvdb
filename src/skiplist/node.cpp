@@ -11,7 +11,7 @@ Node::Node(const std::string &key, const char *value, uint64_t value_size, int l
     _value_size = value_size;
     char* new_value = new (std::nothrow)char[value_size];
     if (new_value != nullptr) {
-        _value = std::shared_ptr<char>(new_value, \
+        _value = std::shared_ptr<char[]>(new_value, \
                 [](char* value_ptr) { SAFE_DELETE_ARR(value_ptr); });
         memcpy(new_value, value, value_size);
         _forward = std::vector<Node *>(level);
